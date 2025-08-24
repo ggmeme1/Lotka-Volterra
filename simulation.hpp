@@ -21,7 +21,7 @@ struct State {
 };
 
 class Simulation {
-  Parameters params_;
+Parameters params_;
   double dt_;
   std::vector<State> history_;
   double x_rel_;  // Current relative prey population
