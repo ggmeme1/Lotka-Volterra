@@ -21,6 +21,7 @@ struct State {
 };
 
 class Simulation {
+ private:
   Parameters params_;
   double dt_;
   std::vector<State> history_;

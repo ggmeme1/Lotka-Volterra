@@ -6,6 +6,22 @@
 
 namespace lv {
 
+double Simulation::abs_x(double x_rel) const {
+  return x_rel * (params_.d / params_.c);
+}
+
+double Simulation::abs_y(double y_rel) const {
+  return y_rel * (params_.a / params_.b);
+}
+
+double Simulation::compute_h(double x, double y) const {
+  if (x <= 0. || y <= 0.) {
+    return std::numeric_limits<double>::quiet_NaN();
+  }
+  return -params_.d * std::log(x) + params_.c * x + params_.b * y -params_.a * std::log(y);
+}
+
+
 Simulation::Simulation(Parameters params, double x0, double y0, double dt)
     : params_{params}, dt_{dt} {
   if (params.a <= 0. || params.b <= 0. || params.c <= 0. || params.d <= 0.) {
@@ -57,20 +73,5 @@ const std::vector<State>& Simulation::history() const { return history_; }
 
 State Simulation::current_state() const { return history_.back(); }
 
-double Simulation::abs_x(double x_rel) const {
-  return x_rel * (params_.d / params_.c);
-}
-
-double Simulation::abs_y(double y_rel) const {
-  return y_rel * (params_.a / params_.b);
-}
-
-double Simulation::compute_h(double x, double y) const {
-  if (x <= 0. || y <= 0.) {
-    return std::numeric_limits<double>::quiet_NaN();
-  }
-  return -params_.d * std::log(x) + params_.c * x + params_.b * y -
-         params_.a * std::log(y);
-}
 
 }  // namespace lv
