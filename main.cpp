@@ -19,7 +19,7 @@ int main()
     // Simulation settings
     const double dt = 0.001;
     int num_steps = 0;
-    std::cout << "Inserire il numero di steps da fare per l'evoluzione: " << '\n';
+    std::cout << "How many steps would you do in this simulation: " << '\n';
     std::cin >> num_steps;
    
     // Create and run the simulation
