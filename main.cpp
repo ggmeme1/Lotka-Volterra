@@ -21,7 +21,7 @@ int main()
     int num_steps = 0;
     std::cout << "How many steps would you do in this simulation: " << '\n';
     std::cin >> num_steps;
-   
+
     // Create and run the simulation
     lv::Simulation sim(params, x0, y0, dt);
     sim.run(num_steps);
