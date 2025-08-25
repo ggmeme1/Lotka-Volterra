@@ -1,1 +1,0 @@
-/usr/bin/c++  -fno-omit-frame-pointer -Wall -Wextra -D_GLIBCXX_ASSERTIONS CMakeFiles/simulation.t.dir/simulation.test.cpp.o CMakeFiles/simulation.t.dir/simulation.cpp.o -o simulation.t 

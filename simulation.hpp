@@ -21,7 +21,7 @@ struct State {
 };
 
 class Simulation {
-Parameters params_;
+
  private:
   Parameters params_;
   double dt_;

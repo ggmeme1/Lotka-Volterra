@@ -1,10 +1,10 @@
-Start testing: Aug 24 15:41 CEST
+Start testing: Aug 25 13:27 CEST
 ----------------------------------------------------------
 1/1 Testing: simulation.t
 1/1 Test: simulation.t
 Command: "/home/gg/Downloads/Lotka-Volterra/build/Release/simulation.t"
 Directory: /home/gg/Downloads/Lotka-Volterra/build
-"simulation.t" start time: Aug 24 15:41 CEST
+"simulation.t" start time: Aug 25 13:27 CEST
 Output:
 ----------------------------------------------------------
 [doctest] doctest version is "2.4.12"
@@ -14,11 +14,11 @@ Output:
 [doctest] assertions: 11 | 11 passed | 0 failed |
 [doctest] Status: SUCCESS!
 <end of output>
-Test time =   0.01 sec
+Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"simulation.t" end time: Aug 24 15:41 CEST
+"simulation.t" end time: Aug 25 13:27 CEST
 "simulation.t" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 24 15:41 CEST
+End testing: Aug 25 13:27 CEST
