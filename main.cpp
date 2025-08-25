@@ -27,10 +27,10 @@ int main()
     sim.run(num_steps);
 
     // Write results to a CSV file
-    std::ofstream outfile{"results.csv"};
+    std::ofstream outfile{"results.txt"};
     if (!outfile)
     {
-      throw std::runtime_error("Failed to open results.csv for writing.");
+      throw std::runtime_error("Failed to open results.txt for writing.");
     }
 
     // Write CSV header
@@ -45,7 +45,7 @@ int main()
     }
 
     std::cout << "Simulation finished. " << history.size()
-              << " states written to results.csv.\n";
+              << " states written to results.txt.\n";
   }
   catch (const std::exception &e)
   {

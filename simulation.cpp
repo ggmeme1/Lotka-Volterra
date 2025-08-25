@@ -2,7 +2,6 @@
 
 #include <cmath>
 #include <stdexcept>
-#include <limits> // Per std::numeric_limits
 
 namespace lv {
 
@@ -16,7 +15,7 @@ double Simulation::abs_y(double y_rel) const {
 
 double Simulation::compute_h(double x, double y) const {
   if (x <= 0. || y <= 0.) {
-    return std::numeric_limits<double>::quiet_NaN();
+    throw std::invalid_argument("pupulation must be positive");
   }
   return -params_.d * std::log(x) + params_.c * x + params_.b * y -params_.a * std::log(y);
 }
@@ -51,7 +50,7 @@ void Simulation::evolve() {
   x_rel_ = x_rel_prev + params_.a * (1. - y_rel_prev) * x_rel_prev * dt_;
   y_rel_ = y_rel_prev + params_.d * (x_rel_prev - 1.) * y_rel_prev * dt_;
 
-  // Populations cannot be negative
+  
   if (x_rel_ <= 0. || y_rel_ <= 0.) {
     x_rel_ = 0.;
     y_rel_ = 0.;
@@ -74,4 +73,4 @@ const std::vector<State>& Simulation::history() const { return history_; }
 State Simulation::current_state() const { return history_.back(); }
 
 
-}  // namespace lv
+}  
