@@ -9,31 +9,33 @@ int main()
 {
   try
   {
-    // System parameters (alpha, beta, gamma, delta)
+
     const lv::Parameters params{.a = 0.8, .b = 0.004, .c = 0.002, .d = 0.3};
 
-    // Initial populations for prey (x0) and predators (y0)
     const double x0 = 200.0;
     const double y0 = 80.0;
 
-    // Simulation settings
     const double dt = 0.001;
     int num_steps = 0;
     std::cout << "How many steps would you do in this simulation: " << '\n';
     std::cin >> num_steps;
+    
+    if (std::cin.fail() || num_steps <= 0)
+    {
+      std::cerr << "Error: Invalid input. Please provide a positive number of steps.\n";
+      return EXIT_FAILURE;
+    }
 
     // Create and run the simulation
     lv::Simulation sim(params, x0, y0, dt);
     sim.run(num_steps);
 
-    // Write results to a CSV file
     std::ofstream outfile{"results.txt"};
     if (!outfile)
     {
       throw std::runtime_error("Failed to open results.txt for writing.");
     }
 
-    // Write CSV header
     outfile << "step,time,x,y,invariant\n";
 
     const auto &history = sim.history();

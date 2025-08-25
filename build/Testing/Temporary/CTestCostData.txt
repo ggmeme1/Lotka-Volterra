@@ -1,2 +1,2 @@
-simulation.t 8 0.000303725
+simulation.t 10 0.000231778
 ---

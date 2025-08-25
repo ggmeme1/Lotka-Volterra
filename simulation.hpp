@@ -7,17 +7,17 @@ namespace lv {
 
 // Parameters for the Lotka-Volterra model
 struct Parameters {
-  double a;  // Prey growth rate (alpha)
-  double b;  // Prey death rate (beta)
-  double c;  // Predator growth rate (gamma)
-  double d;  // Predator death rate (delta)
+  double a;  
+  double b; 
+  double c; 
+  double d; 
 };
 
 // Represents the system state at a specific time
 struct State {
-  double x;          // Prey population
-  double y;          // Predator population
-  double invariant;  // The conserved quantity H
+  double x;          
+  double y;          
+  double invariant;  
 };
 
 class Simulation {
@@ -26,22 +26,22 @@ class Simulation {
   Parameters params_;
   double dt_;
   std::vector<State> history_;
-  double x_rel_;  // Current relative prey population
-  double y_rel_;  // Current relative predator population
+  double x_rel_; 
+  double y_rel_;  
 
-  // Private helpers to convert between relative and absolute coordinates
+  // convert between relative and absolute coordinates
   double abs_x(double x_rel) const;
   double abs_y(double y_rel) const;
   double compute_h(double x, double y) const;
 
  public:
-  // Constructor requires system parameters and initial populations (x0, y0)
+
   Simulation(Parameters params, double x0, double y0, double dt);
 
-  // Advances the simulation by a single time step
+  // Advances the simulation 
   void evolve();
 
-  // Runs the simulation for a given number of steps
+
   void run(int steps);
 
   // Accessors
@@ -49,6 +49,6 @@ class Simulation {
   State current_state() const;
 };
 
-}  // namespace lv
+}  
 
-#endif  // LV_SIMULATION_HPP
+#endif 
