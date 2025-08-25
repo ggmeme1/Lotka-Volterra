@@ -1,0 +1,1 @@
+/usr/bin/c++  -fno-omit-frame-pointer -Wall -Wextra -D_GLIBCXX_ASSERTIONS CMakeFiles/lotka_volterra.dir/main.cpp.o CMakeFiles/lotka_volterra.dir/simulation.cpp.o -o lotka_volterra 
