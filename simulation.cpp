@@ -15,7 +15,7 @@ double Simulation::abs_y(double y_rel) const {
 
 double Simulation::compute_h(double x, double y) const {
   if (x <= 0. || y <= 0.) {
-    throw std::invalid_argument("pupulation must be positive");
+    throw std::invalid_argument("Extinct population");
   }
   return -params_.d * std::log(x) + params_.c * x + params_.b * y -
          params_.a * std::log(y);
