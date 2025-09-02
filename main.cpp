@@ -7,13 +7,45 @@
 
 int main() {
   try {
-    const lv::Parameters params{.a = 0.8, .b = 0.004, .c = 0.002, .d = 0.3};
+    lv::Parameters params{};
 
     const double x0 = 200.0;
     const double y0 = 80.0;
-
     const double dt = 0.001;
+
     int num_steps = 0;
+
+    std::cout << "--- Lotka-Volterra Simulation Setup ---\n";
+    std::cout << "Please provide the four model parameters.\n";
+
+    std::cout << "Enter parameter A (prey growth rate, e.g., 0.8): ";
+    std::cin >> params.a;
+    if (std::cin.fail()) {
+      std::cerr << "Error: Invalid input for parameter A.\n";
+      return EXIT_FAILURE;
+    }
+
+    std::cout << "Enter parameter B (prey death rate, e.g., 0.004): ";
+    std::cin >> params.b;
+    if (std::cin.fail()) {
+      std::cerr << "Error: Invalid input for parameter B.\n";
+      return EXIT_FAILURE;
+    }
+
+    std::cout << "Enter parameter C (predator growth rate, e.g., 0.002): ";
+    std::cin >> params.c;
+    if (std::cin.fail()) {
+      std::cerr << "Error: Invalid input for parameter C.\n";
+      return EXIT_FAILURE;
+    }
+
+    std::cout << "Enter parameter D (predator death rate, e.g., 0.3): ";
+    std::cin >> params.d;
+    if (std::cin.fail()) {
+      std::cerr << "Error: Invalid input for parameter D.\n";
+      return EXIT_FAILURE;
+    }
+
     std::cout << "How many steps would you do in this simulation: " << '\n';
     std::cin >> num_steps;
 

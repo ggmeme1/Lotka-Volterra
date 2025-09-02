@@ -1,4 +1,4 @@
-# Install script for directory: /home/gg/Downloads/Lotka-Volterra
+# Install script for directory: /home/gg/Downloads/progetto
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/gg/Downloads/Lotka-Volterra/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gg/Downloads/progetto/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
