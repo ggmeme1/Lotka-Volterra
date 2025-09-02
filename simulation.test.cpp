@@ -45,7 +45,6 @@ TEST_CASE("Testing Evolution Logic") {
     sim.evolve();
     auto state = sim.current_state();
 
-   
     CHECK(state.x == doctest::Approx(200.096));
     CHECK(state.y == doctest::Approx(80.008));
   }
@@ -53,7 +52,7 @@ TEST_CASE("Testing Evolution Logic") {
   SUBCASE("Running for multiple steps populates history") {
     lv::Simulation sim(params, 200., 80., dt);
     sim.run(100);
-   
+
     CHECK(sim.history().size() == 101);
   }
 }
@@ -67,6 +66,5 @@ TEST_CASE("Testing Invariant Conservation") {
   const double h_initial = history.front().invariant;
   const double h_final = history.back().invariant;
 
- 
   CHECK(h_initial == doctest::Approx(h_final).epsilon(0.01));
 }
