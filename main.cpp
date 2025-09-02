@@ -50,8 +50,7 @@ int main() {
     std::cin >> num_steps;
 
     if (std::cin.fail() || num_steps <= 0) {
-      std::cerr << "Error: Invalid input. Please provide a positive number of "
-                   "steps.\n";
+      std::cerr << "Error: Invalid input. Please provide a positive number of steps.\n";
       return EXIT_FAILURE;
     }
 
@@ -69,12 +68,11 @@ int main() {
     const auto &history = sim.history();
     for (size_t i = 0; i < history.size(); ++i) {
       const auto &state = history[i];
-      outfile << i << ',' << i * dt << ',' << state.x << ',' << state.y << ','
-              << state.invariant << '\n';
+      outfile << i << ',' << i * dt << ',' << state.x << ',' << state.y << ',' << state.invariant << '\n';
     }
 
-    std::cout << "Simulation finished. " << history.size()
-              << " states written to results.txt.\n";
+    std::cout << "Simulation finished. " << history.size() << " states written to results.txt.\n";
+    
   } catch (const std::exception &e) {
     std::cerr << "Caught exception: '" << e.what() << "'\n";
     return EXIT_FAILURE;
