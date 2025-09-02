@@ -21,6 +21,8 @@ TEST_CASE("Testing Simulation Initialization") {
                     std::invalid_argument);
     CHECK_THROWS_AS(lv::Simulation(params, 100., 50., 0.),
                     std::invalid_argument);
+    CHECK_THROWS_AS(lv::Simulation({1., -1., 1., 1.}, 100., 50., 0.01),
+                    std::invalid_argument);
   }
 }
 
