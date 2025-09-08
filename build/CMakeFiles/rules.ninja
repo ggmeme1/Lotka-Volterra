@@ -137,7 +137,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /usr/bin/cmake --regenerate-during-build -S/home/gg/Downloads/progetto -B/home/gg/Downloads/progetto/build
+  command = /usr/bin/cmake --regenerate-during-build -S/home/simo-06/Lotka-Volterra -B/home/simo-06/Lotka-Volterra/build
   description = Re-running CMake...
   generator = 1
 

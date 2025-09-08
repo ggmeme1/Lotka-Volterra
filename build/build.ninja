@@ -71,7 +71,7 @@ build simulation.t: phony Debug/simulation.t
 
 
 #############################################
-# Folder: /home/gg/Downloads/progetto/build
+# Folder: /home/simo-06/Lotka-Volterra/build
 
 build all: phony all$:Debug
 
